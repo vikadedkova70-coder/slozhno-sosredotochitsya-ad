@@ -142,7 +142,7 @@
   text-shadow: 2px 2px 0px var(--accent-color);
 }
 
-.link:hover{
+.link:hover {
   text-decoration: underline;
 }
 
