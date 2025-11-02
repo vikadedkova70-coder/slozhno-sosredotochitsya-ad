@@ -1,5 +1,227 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  padding: 10px;
+  font-family: 'IBM Plex mono', monospace;
+  font-size: 18px;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  background-image: var(--bg-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  align-items: center;
+  block-size: 100vh;
+  min-block-size: 668px;
+  margin-block-end: 40px;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  margin-block-start: 65px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  border: 1px solid transparent;
+  padding: 2px 13px;
+  color: var(--menu-color);
+  font-size: inherit;
+  line-height: 1;
+  text-transform: lowercase;
+  background: transparent;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  border-color: var(--menu-hover-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end-color: var(--menu-color);
+}
+
+.header__theme-menu-button_active {
+  border-color: var(--menu-color);
+}
+
+.header__theme-menu-button_active:hover {
+  border-color: var(--menu-color);
+}
+
+.header__title {
+  color: var(--title-color);
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 0.825;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header__text {
+  justify-self: end;
+  align-self: center;
+  max-inline-size: 364px;
+  font-weight: 700;
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--subtitle-text-color);
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  inset-block-start: 10px;
+  inset-inline-end: 10px;
+  border-inline-end: 1px solid var(--decor-color);
+  border-block-start: 1px solid var(--decor-color);
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  inset-block-end: 10px;
+  inset-inline-start: 10px;
+  border-inline-start: 1px solid var(--decor-color);
+  border-block-end: 1px solid var(--decor-color);
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.header__rec {
+  position: absolute;
+  inset-block-start: 10px;
+  inset-inline-end: 38px;
+  color: var(--accent-color);
+  font-size: inherit;
+  text-transform: uppercase;
+}
+
+.header__rec::after {
+  content: '';
+  position: absolute;
+  inset-block-start: 8px;
+  inset-inline-end: -19px;
+  border-radius: 50%;
+  inline-size: 9px;
+  block-size: 9px;
+  background-color: var(--accent-color);
+  filter: drop-shadow(0px 0px 4px var(--accent-color));
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.section {
+  display: grid;
+  gap: 20px;
+}
+
+.section__title {
+  color: var(--section-title-color);
+  font-weight: 700;
+  font-size: inherit;
+}
+
+.section__content {
+  display: grid;
+  gap: 20px;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.article__title {
+  font-weight: 700;
+  font-size: inherit;
+}
+
+.article__text {
+  color: var(--text-color);
+}
+
+.article__subtitle {
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.article__link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.article__link:hover {
+  border-block-end: 1px solid var(--text-color);
+}
+
+.article__link:focus {
+  outline: none;
+}
+
+.article__link:focus-visible {
+  outline: 1px solid var(--text-color);
+}
+
+.gallery {
+  display: grid;
+  gap: 10px;
+}
+
+.gallery__title {
+  font-weight: 700;
+  font-size: inherit;
+}
+
+.gallery__images {
+  display: grid;
+  gap: 10px;
+}
+
+.gallery__image {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.footer {
+  position: relative;
+  display: grid;
+  place-items: center;
+  block-size: 100vh;
+  min-block-size: 668px;
+  margin-block-start: 40px;
+}
+
+.footer__title {
+  color: var(--title-color);
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7rem + 1vw, 7.5rem);
+  text-shadow: 2px 2px 0 var(--accent-color);
 }
