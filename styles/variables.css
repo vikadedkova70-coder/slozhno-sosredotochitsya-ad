@@ -1,4 +1,119 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
+:root {
+  --bg-color: #000028;
+  --text-color: #F1B2CE;
+  --accent-color: #FF0070;
+  --title-color: #DB00FF;
+  --subtitle-text-color: #000028;
+  --section-title-color: #FF0070;
+  --decor-color: #FF0070;
+  --bg-image: url(../images/cover-image-dark.png);
+  --menu-color: #FF0070;
+  --menu-hover-color: rgba(255, 0, 112, 0.4);
+}
+
+@media (width >= 768px) {
+  .page {
+    padding: 20px;
+  }
+
+  .header {
+    margin-block-end: 60px;
+  }
+
+  .header__theme-menu {
+    margin-block-start: 172px;
+  }
+
+  .header__title {
+    font-size: clamp(7.5rem, 0.5rem + 14.5vw, 9.8rem);
+    margin-inline-start: -20px;
+  }
+
+  .header__text {
+    max-inline-size: 491px;
+  }
+
+  .decorated-zone::before {
+    inset-block-start: 20px;
+    inset-inline-end: 20px;
+  }
+
+  .decorated-zone::after {
+    inset-block-end: 20px;
+    inset-inline-start: 20px;
+  }
+
+  .header__rec {
+    inset-block-start: 20px;
+    inset-inline-end: 48px;
+  }
+
+  .main {
+    gap: 80px;
+  }
+
+  .section {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .section-wide .section__content {
+    grid-column: 1 / -1;
+  }
+
+  .gallery {
+    gap: 20px;
+  }
+
+  .gallery__images {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .gallery__image:nth-child(1) {
+    grid-column: span 2;
+  }
+
+  .gallery__image:nth-child(2) {
+    grid-row: span 2;
+  }
+
+  .gallery__image:nth-child(3) {
+    grid-row: span 2;
+  }
+
+  .gallery__image:nth-child(5) {
+    grid-column: span 2;
+  }
+
+  .footer {
+    margin-block-start: 60px;
+  }
+
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5rem + 14.5vw, 9.8rem);
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+    margin-block-start: 0;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .header__text {
+    max-inline-size: 491px;
+  }
+
+  .section-three-columns {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-three-columns .section__content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
