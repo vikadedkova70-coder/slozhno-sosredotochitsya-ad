@@ -4,7 +4,10 @@
   font-size: 18px;
   line-height: 23.4px;
   background-color: var(--page-background-color, #000028);
-  background-image: var(--page-background-image, url("../images/cover-image.png"));
+  background-image: var(
+    --page-background-image,
+    url("../images/cover-image.png")
+  );
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -178,7 +181,7 @@
 }
 
 .header__theme-menu-button:hover {
-  border-color: var(--secondary-color-40, #ff007040);
+  border-color: var(--secondary-color-o-40, #ff007040);
 }
 
 .header__theme-menu-button:focus {
