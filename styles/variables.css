@@ -1,119 +1,114 @@
 :root {
-  --bg-color: #000028;
-  --text-color: #F1B2CE;
-  --accent-color: #FF0070;
-  --title-color: #DB00FF;
-  --subtitle-text-color: #000028;
-  --section-title-color: #FF0070;
-  --decor-color: #FF0070;
-  --bg-image: url(../images/cover-image-dark.png);
-  --menu-color: #FF0070;
-  --menu-hover-color: rgba(255, 0, 112, 0.4);
+  --color-pink-1: #fff1f7;
+  --color-pink-2: #f1b2ce;
+  --color-pink-3: #ffc2e6;
+  --color-pink-4: #ff8dcb;
+
+  --color-purple-1: #db00ff;
+  --color-purple-2: #ff0070;
+  --color-purple-2-40: #ff007040;
+
+  --color-black-1: #000028;
+  --color-black-2: #353430;
+  --color-black-2-40: #35343040;
+
+  --text-color: var(--color-pink-2, #f1b2ce);
+  --brand-color: var(--color-purple-1, #db00ff);
+  --secondary-color: var(--color-purple-2, #ff0070);
+  --secondary-color-o-40: var(--color-purple-2-40, #ff007040);
+  --accent-color: var(--color-purple-2, #ff0070);
+  --highlight-color: var(--color-black-1, #000028);
+
+  --page-font-family: "IBM Plex mono", monospace;
+  --page-background-image: url("../images/cover-image.png");
+  --page-background-color: var(--color-black-1, #000028);
+
+  --rec-decor-visibility: visible;
 }
 
 @media (width >= 768px) {
-  .page {
-    padding: 20px;
+  .rec-decor {
+    inset-inline-end: 28px;
+    inset-block-start: 20px;
+  }
+
+  .page-title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .section {
+    grid-template-columns: clamp(236px, calc(100% / 3.25), 315px) 1fr;
+  }
+
+  .section-what__articles-list {
+    grid-column-start: span 2;
+  }
+
+  .section-gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .section-how__articles-list {
+    grid-column-start: 2;
+  }
+
+  .gallery-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .gallery-list__item:first-child,
+  .gallery-list__item:last-child {
+    grid-column-start: span 2;
+  }
+
+  .gallery-list__item:nth-child(2),
+  .gallery-list__item:nth-child(3) {
+    grid-row-start: span 2;
   }
 
   .header {
-    margin-block-end: 60px;
+    padding-inline-start: 0;
   }
 
   .header__theme-menu {
-    margin-block-start: 172px;
+    margin-block-start: 170px;
+    margin-block-end: 70px;
   }
 
   .header__title {
-    font-size: clamp(7.5rem, 0.5rem + 14.5vw, 9.8rem);
-    margin-inline-start: -20px;
-  }
-
-  .header__text {
-    max-inline-size: 491px;
-  }
-
-  .decorated-zone::before {
-    inset-block-start: 20px;
-    inset-inline-end: 20px;
-  }
-
-  .decorated-zone::after {
-    inset-block-end: 20px;
-    inset-inline-start: 20px;
-  }
-
-  .header__rec {
-    inset-block-start: 20px;
-    inset-inline-end: 48px;
+    justify-self: end;
+    inline-size: clamp(364px, calc(100% / 2 - 10px), 491px);
   }
 
   .main {
     gap: 80px;
-  }
-
-  .section {
-    grid-template-columns: 1fr 2fr;
-  }
-
-  .section-wide .section__content {
-    grid-column: 1 / -1;
-  }
-
-  .gallery {
-    gap: 20px;
-  }
-
-  .gallery__images {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-
-  .gallery__image:nth-child(1) {
-    grid-column: span 2;
-  }
-
-  .gallery__image:nth-child(2) {
-    grid-row: span 2;
-  }
-
-  .gallery__image:nth-child(3) {
-    grid-row: span 2;
-  }
-
-  .gallery__image:nth-child(5) {
-    grid-column: span 2;
-  }
-
-  .footer {
-    margin-block-start: 60px;
-  }
-
-  .footer__title {
-    font-size: clamp(7.5rem, 0.5rem + 14.5vw, 9.8rem);
+    padding: 60px 20px;
   }
 }
 
 @media (width >= 1024px) {
+  .page-title {
+    text-shadow: 4px 4px 0 var(--color-purple-2, #ff0070);
+  }
+
+  .section {
+    column-gap: 30px;
+  }
+
+  .section-what__articles-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .header__theme-menu {
     justify-self: center;
-    align-self: start;
+    margin-inline-start: 20px;
     margin-block-start: 0;
+    margin-block-end: 215px;
   }
 
   .header__theme-menu-list {
     flex-direction: row;
-  }
-
-  .header__text {
-    max-inline-size: 491px;
-  }
-
-  .section-three-columns {
-    grid-template-columns: 1fr;
-  }
-  
-  .section-three-columns .section__content {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
